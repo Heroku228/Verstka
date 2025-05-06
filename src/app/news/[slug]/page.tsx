@@ -1,7 +1,6 @@
 // app/news/[slug]/page.tsx
 import { Footer } from '@/app/components/footer/Footer'
 import { Header } from '@/app/components/header/Header'
-import { readFileSync } from 'fs'
 import fs from 'fs/promises'
 import Image from 'next/image'
 import path from 'path'
@@ -22,7 +21,7 @@ type NewsProps = {
 
 export async function generateStaticParams() {
 	const filePath = path.join(process.cwd(), 'public', 'data-from-server', 'dataFromServer.json')
-	const fileData = readFileSync(filePath, 'utf8')
+	const fileData = await fs.readFile(filePath, 'utf8')
 	const news = JSON.parse(fileData)
 
 	return news.map((item: { title: string }) => ({
