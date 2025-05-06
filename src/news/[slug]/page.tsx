@@ -5,9 +5,6 @@ import Image from 'next/image'
 import path from 'path'
 import styles from './NewsDetail.module.scss'
 
-type Props = {
-	params: { slug: string }
-}
 
 type NewsProps = {
 	title: string
@@ -29,7 +26,7 @@ export async function generateStaticParams() {
 }
 
 
-export default async function NewsDetail({ params }: Props) {
+export default async function NewsDetail({ params }) {
 	const { slug } = params
 
 	const filePath = path.join(process.cwd(), 'public', 'data-from-server', 'dataFromServer.json')
