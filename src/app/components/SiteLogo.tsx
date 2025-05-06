@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
 
-export const SiteLogo: React.FC = ({ whiteColor }: { whiteColor?: boolean }) => {
+export const SiteLogo = ({ whiteColor }: { whiteColor?: boolean }) => {
 	const router = useRouter()
 	const pathname = usePathname()
 
@@ -11,6 +11,7 @@ export const SiteLogo: React.FC = ({ whiteColor }: { whiteColor?: boolean }) => 
 		if (pathname === '/') window.location.reload()
 		else router.push('/')
 	}
+
 	return (
 		<>
 			{whiteColor ?

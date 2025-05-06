@@ -39,6 +39,7 @@ export const Header: React.FC = () => {
 			{showPopup
 				? <HeaderPopup setShowModal={setShowModal} setShowPopup={setShowPopup} />
 				: <Image
+					unoptimized
 					onClick={() => setShowPopup(true)}
 					style={{ cursor: 'pointer' }}
 					src={'/vector.svg'}

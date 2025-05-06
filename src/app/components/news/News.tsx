@@ -49,6 +49,7 @@ export const News = () => {
 						className={styles.itemBlock} key={index}>
 						<div className={styles.imageWrapper}>
 							<Image
+								unoptimized
 								src={item.image}
 								alt='news-image'
 								fill

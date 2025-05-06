@@ -24,6 +24,7 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 				<div className={styles.itemBlock}>
 					<div className={styles.imageWrapper}>
 						<Image
+							unoptimized
 							src={news[currentIndex].image}
 							alt='news-image'
 							fill
@@ -38,6 +39,7 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 			)}
 			<div className={styles.arrows}>
 				<Image
+					unoptimized
 					onClick={handlePrev}
 					src={'/Type=Left.svg'}
 					width={30}
@@ -45,6 +47,7 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 					alt='arrow-icon'
 				/>
 				<Image
+					unoptimized
 					onClick={handleNext}
 					src={'/Type=Right.svg'}
 					width={30}

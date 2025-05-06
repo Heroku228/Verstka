@@ -13,6 +13,7 @@ export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup, setShowM
 	return (
 		<div className={styles.headerPopUpContainer}>
 			<Image
+				unoptimized
 				onClick={() => setShowPopup(false)}
 				style={{ cursor: 'pointer' }}
 				src={'/Type=Close.svg'}
