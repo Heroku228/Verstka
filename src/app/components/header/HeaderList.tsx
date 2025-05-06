@@ -1,3 +1,5 @@
+'use client'
+
 import { MenuItem } from '@/app/ui/menu-item/MenuItem'
 import { headerItems } from '@/const/header-items/HeaderItems'
 import { STYLES_VARIANTS } from '@/const/StylesVarians'
@@ -19,7 +21,6 @@ export const HeaderList: React.FC = () => {
 
 		document.addEventListener('mousedown', handleClickOutside)
 		return () => document.removeEventListener('mousedown', handleClickOutside)
-
 	}, [])
 
 

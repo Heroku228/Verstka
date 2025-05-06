@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import styles from './News.module.scss'
 import { MobileVersion } from './subcomponents/MobileVersion'
@@ -14,6 +15,8 @@ export type NewsProps = {
 export const News = () => {
 	const [news, setNews] = useState<NewsProps[]>([])
 	const [isMobile, setIsMobile] = useState(false)
+
+	const router = useRouter()
 
 	useEffect(() => {
 		const fetchDataFromServer = async () => {
@@ -41,7 +44,9 @@ export const News = () => {
 				<MobileVersion news={news} />
 			) : (
 				news.map((item, index) => (
-					<div className={styles.itemBlock} key={index}>
+					<div
+						onClick={() => router.push(`/news/${item.title}`)}
+						className={styles.itemBlock} key={index}>
 						<div className={styles.imageWrapper}>
 							<Image
 								src={item.image}

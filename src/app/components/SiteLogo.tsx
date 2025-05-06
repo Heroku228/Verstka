@@ -1,8 +1,9 @@
+'use client'
 import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
 
 
-export const SiteLogo = ({ whiteColor }: { whiteColor?: boolean }) => {
+export const SiteLogo: React.FC = ({ whiteColor }: { whiteColor?: boolean }) => {
 	const router = useRouter()
 	const pathname = usePathname()
 

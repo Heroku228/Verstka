@@ -6,9 +6,10 @@ import { HeaderList } from './HeaderList'
 
 type HeaderPopupProps = {
 	setShowPopup: React.Dispatch<React.SetStateAction<boolean>>
+	setShowModal: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup }) => {
+export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup, setShowModal }) => {
 	return (
 		<div className={styles.headerPopUpContainer}>
 			<Image
@@ -22,7 +23,9 @@ export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup }) => {
 			<div className={styles.burgerContainer}>
 				<div className={styles.mobilePopUp}>
 					<HeaderList />
-					<Button>Связаться с нами</Button>
+					<Button onClick={() => setShowModal(true)}>
+						Связаться с нами
+					</Button>
 				</div>
 			</div>
 		</div>

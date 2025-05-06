@@ -13,6 +13,6 @@ input::placeholder {
 	color: $black-color;
 }
 
-input:active::placeholder {
+input:focus::placeholder {
 	opacity: 1;
 }
