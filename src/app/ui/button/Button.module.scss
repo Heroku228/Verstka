@@ -1,0 +1,10 @@
+@use '@/const/styles/variables.scss' as *;
+@use '@/const/styles/mixin.scss' as *;
+
+.buttonPrimary {
+	@include button($white-color)
+}
+
+.buttonSecondary {
+	@include button($black-color)
+}

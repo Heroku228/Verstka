@@ -1,0 +1,89 @@
+@use '@/const/styles/variables.scss' as *;
+
+.itemPrimary {
+	font-weight: 500;
+	font-size: 16px;
+	color: $white-color;
+}
+
+.dropdown {
+	position: absolute;
+	width: 100%;
+	background-color: black;
+	top: 120px;
+	left: 0;
+	gap: 8;
+	column-gap: 30;
+
+	& > span {
+		color: white;
+	}
+
+	.dropdownContainer {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		width: 50%;
+		margin: auto;
+		padding: 20px 0;
+
+		.dropdownItem {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+			width: 100%;
+			margin: auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		position: initial;
+
+		.dropdownContainer {
+			display: flex;
+			flex-direction: column;
+			margin-left: 30px;
+			gap: 10px;
+			width: 100%;
+		}
+	}
+
+	
+}
+
+.isNonActive {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.itemSecondary {
+	color: $white-color;
+}
+
+.itemSecondary:hover {
+	opacity: 0.5;
+	transition: 0.3s ease;
+}
+
+.itemContainer {
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+
+	@media (max-width: 768px) {
+		position: relative;
+	}
+}
+
+.iconWrapper {
+	display: inline-flex;
+}
+
+.icon {
+	transition: transform 0.3s ease;
+}
+
+.activeIcon {
+	transform: rotate(90deg);
+}

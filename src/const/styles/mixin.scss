@@ -1,0 +1,42 @@
+@use './variables.scss' as *;
+
+@mixin button($text-color, $gradient: linear-gradient(to bottom, #FB8627, #F5BEF6)) {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+	width: max-content;
+	margin-left: auto;
+	font-size: clamp(12px, 1vw, 1rem);
+  font-weight: bold;
+  border: none;
+  border-radius: 1000px;
+  color: $text-color;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    background: $gradient;
+    border-radius: inherit;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+		transition: background-color .3 ease-in-out;
+    background: $gradient;
+    color: white;
+  }
+}
