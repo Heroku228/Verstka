@@ -8,11 +8,11 @@
 	border: 1px solid $black-color;
 }
 
-input::placeholder {
+.input::placeholder {
 	opacity: 0.5;
 	color: $black-color;
 }
 
-input:focus::placeholder {
+.input:focus::placeholder {
 	opacity: 1;
 }
