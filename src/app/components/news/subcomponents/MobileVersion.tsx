@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { NewsProps } from '../News'
 import styles from '../News.module.scss'
@@ -18,10 +19,14 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 		setCurrentIndex(prev => (prev + 1) % news.length)
 	}
 
+	const router = useRouter()
+
 	return (
 		<>
 			{news.length > 0 && (
-				<div className={styles.itemBlock}>
+				<div
+					onClick={() => router.push(`/news/${encodeURIComponent(news[currentIndex].title)}`)}
+					className={styles.itemBlock}>
 					<div className={styles.imageWrapper}>
 						<Image
 							unoptimized

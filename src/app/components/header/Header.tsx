@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
 					loading={'eager'}
 					onClick={() => setShowPopup(true)}
 					style={{ cursor: 'pointer' }}
-					src={'/vector.svg'}
+					src={'/Vector.svg'}
 					alt='burger-menu'
 					width={30}
 					height={30}

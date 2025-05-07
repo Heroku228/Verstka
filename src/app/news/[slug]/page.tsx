@@ -5,7 +5,6 @@ import Image from 'next/image'
 import path from 'path'
 import styles from './NewsDetail.module.scss'
 
-
 type NewsProps = {
 	title: string
 	description: string
@@ -21,7 +20,7 @@ export async function generateStaticParams() {
 	const news = JSON.parse(fileData)
 
 	return news.map((item: { title: string }) => ({
-		slug: encodeURIComponent(item.title),
+		slug: item.title
 	}))
 }
 
@@ -33,14 +32,11 @@ export default async function NewsDetail({ params }) {
 	const fileData = await fs.readFile(filePath, 'utf8')
 	const news: NewsProps[] = JSON.parse(fileData)
 
-	const decodedSlug = decodeURIComponent(slug)
+	const decodedSlug = decodeURIComponent(decodeURIComponent(slug))
+
 	const selected = news.find(item => item.title === decodedSlug)
 
-	console.log('selected :', selected)
-
 	if (!selected) return <div>Новость не найдена</div>
-
-
 
 	return (
 		<div className={styles.newsDetail}>
