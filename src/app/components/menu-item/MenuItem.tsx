@@ -1,3 +1,5 @@
+'use client'
+
 import { STYLES_VARIANTS } from '@/const/StylesVarians'
 import Image from 'next/image'
 import { HTMLAttributes } from 'react'

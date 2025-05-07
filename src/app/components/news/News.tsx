@@ -1,4 +1,7 @@
+'use client'
+
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import styles from './News.module.scss'
@@ -17,10 +20,6 @@ export const News = () => {
 	const [isMobile, setIsMobile] = useState(false)
 
 	const router = useRouter()
-
-	useEffect(() => {
-		console.log('news :', news)
-	}, [news])
 
 	useEffect(() => {
 		const fetchDataFromServer = async () => {
@@ -48,8 +47,8 @@ export const News = () => {
 				<MobileVersion news={news} />
 			) : (
 				news.map((item, index) => (
-					<div
-						onClick={() => router.push(`/news/${encodeURIComponent(item.title)}`)}
+					<Link
+						href={`/news/${item.title}`}
 						className={styles.itemBlock} key={index}>
 						<div className={styles.imageWrapper}>
 							<Image
@@ -65,7 +64,7 @@ export const News = () => {
 							<p>{item.description}</p>
 						</div>
 						<span className={styles.date}>{item.date}</span>
-					</div>
+					</Link>
 				))
 			)}
 		</section>

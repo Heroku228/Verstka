@@ -1,6 +1,6 @@
 'use client'
 
-import { MenuItem } from '@/app/ui/menu-item/MenuItem'
+import { MenuItem } from '@/app/components/menu-item/MenuItem'
 import { headerItems } from '@/const/header-items/HeaderItems'
 import { STYLES_VARIANTS } from '@/const/StylesVarians'
 import { useEffect, useRef, useState } from 'react'

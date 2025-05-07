@@ -13,7 +13,6 @@ type NewsProps = {
 	date: string
 }
 
-
 export async function generateStaticParams() {
 	const filePath = path.join(process.cwd(), 'public', 'data-from-server', 'dataFromServer.json')
 	const fileData = await fs.readFile(filePath, 'utf8')
@@ -23,7 +22,6 @@ export async function generateStaticParams() {
 		slug: item.title
 	}))
 }
-
 
 export default async function NewsDetail({ params }) {
 	const { slug } = params

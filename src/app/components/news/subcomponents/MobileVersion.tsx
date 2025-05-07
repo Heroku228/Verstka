@@ -1,5 +1,7 @@
+'use client'
+
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useState } from 'react'
 import { NewsProps } from '../News'
 import styles from '../News.module.scss'
@@ -19,13 +21,12 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 		setCurrentIndex(prev => (prev + 1) % news.length)
 	}
 
-	const router = useRouter()
 
 	return (
 		<>
 			{news.length > 0 && (
-				<div
-					onClick={() => router.push(`/news/${encodeURIComponent(news[currentIndex].title)}`)}
+				<Link
+					href={`/news/${news[currentIndex].title}`}
 					className={styles.itemBlock}>
 					<div className={styles.imageWrapper}>
 						<Image
@@ -40,7 +41,7 @@ export const MobileVersion: React.FC<MobileVersionProps> = ({ news }) => {
 						<p>{news[currentIndex].description}</p>
 					</div>
 					<span className={styles.date}>{news[currentIndex].date}</span>
-				</div>
+				</Link>
 			)}
 			<div className={styles.arrows}>
 				<Image

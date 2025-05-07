@@ -1,3 +1,6 @@
+'use client'
+
+
 import { FAQItems } from '@/const/faq-items'
 import { useState } from 'react'
 import styles from './FAQ.module.scss'

@@ -1,3 +1,6 @@
+'use client'
+
+
 import { SiteLogo } from '../SiteLogo'
 import styles from './Footer.module.scss'
 
