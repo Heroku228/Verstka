@@ -19,6 +19,10 @@ export const News = () => {
 	const router = useRouter()
 
 	useEffect(() => {
+		console.log('news :', news)
+	}, [news])
+
+	useEffect(() => {
 		const fetchDataFromServer = async () => {
 			const response = await fetch('/data-from-server/dataFromServer.json')
 				.catch(err => console.error(err))
@@ -45,11 +49,12 @@ export const News = () => {
 			) : (
 				news.map((item, index) => (
 					<div
-						onClick={() => router.push(`/news/${item.title}`)}
+						onClick={() => router.push(`/news/${encodeURIComponent(item.title)}`)}
 						className={styles.itemBlock} key={index}>
 						<div className={styles.imageWrapper}>
 							<Image
 								unoptimized
+								loading={'eager'}
 								src={item.image}
 								alt='news-image'
 								fill

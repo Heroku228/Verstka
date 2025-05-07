@@ -82,7 +82,8 @@
 
 				& > button {
 					position: fixed;
-					top: 60%;
+					top: 65%;
+					z-index: 999;
 					margin-top: auto;
 				}
 			}

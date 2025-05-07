@@ -61,7 +61,8 @@ export const MenuItem: React.FC<UIMenuItemProps> = ({
 				<div className={styles.dropdown}>
 					<div className={styles.dropdownContainer}>
 						{childrenList.map((item, idx) => (
-							<span key={idx} className={[styles.dropdownItem, styles.itemSecondary].join(' ')}>{item}
+							<span key={idx} className={[styles.dropdownItem, styles.itemSecondary].join(' ')}>
+								{item}
 							</span>
 						))}
 					</div>

@@ -20,9 +20,12 @@ export async function generateStaticParams() {
 	const fileData = await fs.readFile(filePath, 'utf8')
 	const news = JSON.parse(fileData)
 
-	return news.map((item: { title: string }) => ({
-		slug: encodeURIComponent(item.title),
-	}))
+
+
+	return news.map((item: { title: string }) => {
+		console.log('encodeURIComponent(item.title): ', encodeURIComponent(item.title))
+		return { slug: encodeURIComponent(item.title), }
+	})
 }
 
 
