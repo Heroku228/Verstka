@@ -16,6 +16,8 @@ export const SiteLogo = ({ whiteColor }: { whiteColor?: boolean }) => {
 		<>
 			{whiteColor ?
 				<Image
+					unoptimized
+					loading={'eager'}
 					onClick={handleClickOnLogo}
 					style={{ cursor: 'pointer' }}
 					src={'/Vector copy.svg'}
@@ -24,6 +26,8 @@ export const SiteLogo = ({ whiteColor }: { whiteColor?: boolean }) => {
 					height={84}
 				/>
 				: <Image
+					unoptimized
+					loading={'eager'}
 					onClick={handleClickOnLogo}
 					style={{ cursor: 'pointer' }}
 					src={'/Logo.svg'}

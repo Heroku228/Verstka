@@ -72,6 +72,7 @@ export const LinkMe: React.FC<LinkMeProps> = ({ setShowModal }) => {
 				<div className={styles.modalUpPart}>
 					<h2>СВЯЗАТЬСЯ С НАМИ</h2>
 					<Image
+						loading={'eager'}
 						unoptimized
 						onClick={() => setShowModal(false)}
 						src={'/Close.svg'}

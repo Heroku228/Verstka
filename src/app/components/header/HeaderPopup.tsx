@@ -14,6 +14,7 @@ export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup, setShowM
 		<div className={styles.headerPopUpContainer}>
 			<Image
 				unoptimized
+				loading={'eager'}
 				onClick={() => setShowPopup(false)}
 				style={{ cursor: 'pointer' }}
 				src={'/Type=Close.svg'}
@@ -24,9 +25,11 @@ export const HeaderPopup: React.FC<HeaderPopupProps> = ({ setShowPopup, setShowM
 			<div className={styles.burgerContainer}>
 				<div className={styles.mobilePopUp}>
 					<HeaderList />
-					<Button onClick={() => setShowModal(true)}>
-						Связаться с нами
-					</Button>
+					<div>
+						<Button onClick={() => setShowModal(true)}>
+							Связаться с нами
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>

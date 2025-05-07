@@ -16,6 +16,7 @@ export const FAQBlock: React.FC<FAQBlockProps> = ({ text, description, isOpen, o
 				<h2>{text}</h2>
 				<Image
 					unoptimized
+					loading={'eager'}
 					src={isOpen ? '/Type=Hover.svg' : '/Type=Normal.svg'}
 					alt='icon'
 					width={25}

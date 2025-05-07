@@ -80,11 +80,15 @@
 					align-items: start;
 				}
 
-				& > button {
-					position: fixed;
-					top: 65%;
-					z-index: 999;
-					margin-top: auto;
+				& > div {
+					position: relative;
+					height: 100%;
+
+					& > button {
+						z-index: 999;
+						position: absolute;
+						bottom: 40%;
+					}
 				}
 			}
 		}

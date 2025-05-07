@@ -20,12 +20,9 @@ export async function generateStaticParams() {
 	const fileData = await fs.readFile(filePath, 'utf8')
 	const news = JSON.parse(fileData)
 
-
-
-	return news.map((item: { title: string }) => {
-		console.log('encodeURIComponent(item.title): ', encodeURIComponent(item.title))
-		return { slug: encodeURIComponent(item.title), }
-	})
+	return news.map((item: { title: string }) => ({
+		slug: encodeURIComponent(item.title),
+	}))
 }
 
 
@@ -39,6 +36,8 @@ export default async function NewsDetail({ params }) {
 	const decodedSlug = decodeURIComponent(slug)
 	const selected = news.find(item => item.title === decodedSlug)
 
+	console.log('selected :', selected)
+
 	if (!selected) return <div>Новость не найдена</div>
 
 
@@ -48,7 +47,13 @@ export default async function NewsDetail({ params }) {
 			<Header />
 
 			<section className={styles.newsContainer}>
-				<Image unoptimized src={selected.image} alt="news" width={800} height={400} />
+				<Image
+					loading={'eager'}
+					unoptimized
+					src={selected.image}
+					alt="news"
+					width={800}
+					height={400} />
 				<div>
 					<h2>{selected.title}</h2>
 					<span>{selected.date}</span>
